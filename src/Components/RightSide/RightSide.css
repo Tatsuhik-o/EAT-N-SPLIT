@@ -1,0 +1,49 @@
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: #3a4649;
+}
+.billDiv,
+.expanseDiv,
+.otherExpanseDiv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: #3a4649;
+  align-items: center;
+  padding: 0px 20px;
+}
+.otherExpanseDiv {
+  display: flex;
+}
+.rightside input {
+  height: 30px;
+  width: 125px;
+  text-align: center;
+  padding: 0;
+  font-size: 1.2rem;
+}
+.payeeDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  font-size: 1.2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: #3a4649;
+  align-items: center;
+}
+.payeeDiv select {
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

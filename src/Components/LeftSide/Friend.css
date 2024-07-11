@@ -1,0 +1,33 @@
+.friend {
+  width: 90%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px;
+}
+.friend img {
+  background-position: center center;
+}
+.friend .picSide {
+  height: 100%;
+  width: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.friend .infoSide {
+  margin: 0px 10px;
+  font-size: 1.2rem;
+  width: 60%;
+  padding: 10px 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-style: italic;
+}
+.friend button {
+  margin-left: auto;
+  margin-top: 5px;
+}
