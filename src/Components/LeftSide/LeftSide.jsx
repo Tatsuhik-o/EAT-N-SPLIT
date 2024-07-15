@@ -4,6 +4,10 @@ import Form from "./Form";
 import "./LeftSide.css";
 function LeftSide({ friends, AddNewFriend, currActive, setCurrActive }) {
   const [toggleNewFriend, setToggleNewFriend] = useState(false);
+  function handleAddFriend() {
+    setToggleNewFriend(!toggleNewFriend);
+    setCurrActive(null);
+  }
   return (
     <div className="leftside">
       {friends?.map((friend, index) => {
@@ -14,6 +18,7 @@ function LeftSide({ friends, AddNewFriend, currActive, setCurrActive }) {
             currActive={currActive}
             setCurrActive={setCurrActive}
             index={index}
+            setToggleNewFriend={setToggleNewFriend}
           />
         );
       })}
@@ -24,10 +29,7 @@ function LeftSide({ friends, AddNewFriend, currActive, setCurrActive }) {
           friends={friends}
         />
       )}
-      <button
-        className="addfriend"
-        onClick={() => setToggleNewFriend(!toggleNewFriend)}
-      >
+      <button className="addfriend" onClick={handleAddFriend}>
         {toggleNewFriend && friends.length < 5 ? "Close" : "Add Friend"}
       </button>
     </div>

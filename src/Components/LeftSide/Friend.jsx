@@ -1,5 +1,11 @@
 import "./Friend.css";
-function Friend({ friend, currActive, index, setCurrActive }) {
+function Friend({
+  friend,
+  currActive,
+  index,
+  setCurrActive,
+  setToggleNewFriend,
+}) {
   const style =
     currActive === index
       ? {
@@ -17,10 +23,14 @@ function Friend({ friend, currActive, index, setCurrActive }) {
       : {
           color: "red",
         };
+  function handleSelect() {
+    currActive !== index ? setCurrActive(index) : setCurrActive(null);
+    setToggleNewFriend(false);
+  }
   return (
     <div className="friend" style={style}>
       <div className="picSide">
-        <img src={friend.image} alt={`${friend.name} Image`} />
+        <img src={friend.image} alt={`${friend.name} Image`} loading="lazy" />
       </div>
       <div className="infoSide">
         <div className="friendName">{friend.name}</div>
@@ -28,12 +38,7 @@ function Friend({ friend, currActive, index, setCurrActive }) {
           {friend.verdict || `You and ${friend.name} are even`}
         </div>
       </div>
-      <button
-        className="selectFriend"
-        onClick={() =>
-          currActive !== index ? setCurrActive(index) : setCurrActive(null)
-        }
-      >
+      <button className="selectFriend" onClick={handleSelect}>
         {currActive === index ? "Close" : "Select"}
       </button>
     </div>
